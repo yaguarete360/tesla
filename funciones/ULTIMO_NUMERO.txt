@@ -1,0 +1,1 @@
+SELECT contrato_numero FROM contratos WHERE borrado = "no" AND contrato_linea = "2" AND contrato_centro = "uds" ORDER BY contrato_numero DESC LIMIT 1

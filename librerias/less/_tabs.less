@@ -1,0 +1,35 @@
+// Tabs 
+.tabs-ps {
+    margin: 15px 0;
+
+    // Navigation Tabs
+    .nav-tabs {
+        padding: 0;
+        
+        > li {
+            margin-right: 4px;
+
+            a {
+                color: @negro;
+                padding: 14px 16px;
+                border-radius: 0;
+
+                &:hover {
+                    background-color: @fondocanela;
+                }
+            }
+
+            &.active {
+                a {
+                    color: @marron-oscuro;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    // Tabs content
+    .tab-content {
+        padding: 25px 0;
+    }
+}

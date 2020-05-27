@@ -1,0 +1,43 @@
+// FOOTER
+footer {
+    background-color: @blanco;
+    padding: 25px 0;
+    color: @marron-oscuro;
+
+    .logo {
+        display: block;
+        float:left;
+        width: 160px;
+        height: 77px;
+        text-indent: -9999px;
+        background-image: url('@{imgPath}/logo.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin:0;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            a {
+                color: @marron-oscuro;
+
+                &:hover {
+                    color: @verde;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .col-sm-3 {
+        border-left: 1px solid @canela;
+
+        &:first-child {
+            border-left: 0;
+        }
+    }
+}

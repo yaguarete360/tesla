@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="578900e3-0c5e-4102-8e31-dc6c573ab805">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="parameter1" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[new java.lang.Integer(0)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="query" class="java.lang.String"/>
+	<parameter name="parameter2" class="java.lang.String"/>
+	<parameter name="parameter3" class="java.lang.String"/>
+	<parameter name="parameter4" class="java.lang.String"/>
+	<parameter name="parameter5" class="java.lang.String"/>
+	<parameter name="parameter6" class="java.lang.String"/>
+	<parameter name="parameter7" class="java.lang.String"/>
+	<parameter name="parameter8" class="java.lang.String"/>
+	<parameter name="parameter9" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[$P{query}]]>
+	</queryString>
+	<field name="sample1_no" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="vendedor" class="java.lang.String"/>
+	<field name="fecha" class="java.util.Date"/>
+	<field name="documento" class="java.lang.String"/>
+	<field name="precio" class="java.lang.String"/>
+	<field name="producto" class="java.lang.String"/>
+	<field name="psm" class="java.lang.String"/>
+	<field name="uds" class="java.lang.String"/>
+	<field name="psv" class="java.lang.String"/>
+	<field name="psc" class="java.lang.String"/>
+	<field name="field1" class="java.lang.String"/>
+	<field name="psi" class="java.lang.String"/>
+	<field name="field2" class="java.lang.String"/>
+	<field name="contrato" class="java.lang.String"/>
+	<field name="recargo" class="java.lang.String"/>
+	<field name="saldo" class="java.lang.String"/>
+	<field name="cuenta" class="java.lang.String"/>
+	<field name="cuenta_nro" class="java.lang.String"/>
+	<field name="pago" class="java.lang.String"/>
+	<field name="contrato_nro" class="java.lang.String"/>
+	<field name="field3" class="java.lang.String"/>
+	<field name="field4" class="java.lang.String"/>
+	<field name="field5" class="java.lang.String"/>
+	<variable name="saldo" class="java.lang.Double" resetType="Group" resetGroup="contrato" calculation="Sum">
+		<variableExpression><![CDATA[$F{psc}]]></variableExpression>
+	</variable>
+	<group name="contrato">
+		<groupExpression><![CDATA[$F{contrato}]]></groupExpression>
+		<groupHeader>
+			<band height="24">
+				<textField>
+					<reportElement x="18" y="5" width="527" height="14" uuid="20cf743c-79b7-4b3e-bc64-c019cc5aaab5"/>
+					<textElement>
+						<font size="11" isBold="true" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{contrato_nro}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="21">
+				<line>
+					<reportElement x="0" y="0" width="556" height="1" uuid="c294ce9b-1a04-455f-8219-26ded0ac4bb1"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</line>
+				<textField>
+					<reportElement x="133" y="1" width="100" height="20" uuid="0728b86c-5ac6-4d13-b4ee-bdce31ad2e1b"/>
+					<textElement textAlignment="Right">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{parameter7}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0">
+					<reportElement x="417" y="0" width="100" height="20" uuid="886f7a37-b8db-4526-84e3-69e2edfa027b"/>
+					<textElement textAlignment="Right">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{saldo}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="48" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="7" y="23" width="543" height="20" uuid="3fe89fc7-f07b-4aaf-b94b-b3273069f9ad"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="295" y="3" width="155" height="15" uuid="a004d480-5e99-4dca-a7bd-424124e6fd68"/>
+				<textElement textAlignment="Right">
+					<font size="9" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[COBROS POR COBRADOR:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="449" y="3" width="96" height="11" uuid="b304406d-5622-47c2-af78-193af86b7af3"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameter2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="31" y="27" width="98" height="12" uuid="9e180167-fef6-4e10-83f4-0d494ecf31d7"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FACTURA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="12" y="3" width="155" height="15" forecolor="#336600" backcolor="#FFFFFF" uuid="0f843173-d5ce-430a-b960-4e3bd3f04dfa"/>
+				<textElement>
+					<font size="9" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[PARQUE SERENIDAD S.R.L]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="462" y="27" width="55" height="12" uuid="0d47bbaa-dc62-405e-b6c4-adb783a7232e"/>
+				<textElement textAlignment="Right">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MONTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="141" y="27" width="92" height="12" uuid="93f90dd1-4d0c-4ec8-96be-c7b421c6f8d4"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Forma de Pago]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="27" width="92" height="12" uuid="5593a208-e421-4e4a-9662-aff22e849f57"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Banco]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="342" y="27" width="92" height="12" uuid="69160961-51c6-4a17-a5a0-064f408ebdeb"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nro. Cheque]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<textField pattern="#,##0">
+				<reportElement x="433" y="0" width="84" height="12" uuid="4d1cac22-0ef0-4248-9234-29bf9d69dbd3"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{psc}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="17" y="0" width="112" height="12" uuid="b85cb70b-0f21-4a2d-8c20-38ff1c52a6b0"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{field2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="141" y="0" width="92" height="12" uuid="7d0bc2aa-c6d4-4121-9c2f-afadb3360603"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{field3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="0" width="67" height="12" uuid="106aaf58-d502-4c4a-9f67-bf89bb38eac8"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{field4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="342" y="0" width="75" height="12" uuid="a87687a2-7afb-45fd-9792-2c4953b9d2e4"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{field5}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17" splitType="Stretch">
+			<line>
+				<reportElement x="3" y="0" width="553" height="1" uuid="88da5db1-ea1f-4adb-a6d3-20190eb02ff7"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="239" y="1" width="316" height="15" uuid="a27c3332-d86b-4b24-8e41-f73e26043acc"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="133" y="1" width="100" height="15" uuid="65fb97af-bdc2-4356-9ca5-7fe7ad8af8ee"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{parameter8}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

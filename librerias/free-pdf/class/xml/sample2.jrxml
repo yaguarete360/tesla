@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="578900e3-0c5e-4102-8e31-dc6c573ab805">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="parameter1" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[new java.lang.Integer(0)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="query" class="java.lang.String"/>
+	<parameter name="parameter2" class="java.lang.String"/>
+	<parameter name="parameter3" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[$P{query}]]>
+	</queryString>
+	<field name="sample1_no" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="vendedor" class="java.lang.String"/>
+	<field name="fecha" class="java.util.Date"/>
+	<field name="documento" class="java.lang.String"/>
+	<field name="precio" class="java.lang.String"/>
+	<field name="producto" class="java.lang.String"/>
+	<field name="psm" class="java.lang.String"/>
+	<field name="uds" class="java.lang.String"/>
+	<field name="psv" class="java.lang.String"/>
+	<field name="psc" class="java.lang.String"/>
+	<field name="field1" class="java.lang.String"/>
+	<field name="psi" class="java.lang.String"/>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="131" splitType="Stretch">
+			<staticText>
+				<reportElement x="195" y="117" width="50" height="12" uuid="affe03f3-b668-4f1a-8d39-94718b7827a9"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PSM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="291" y="117" width="43" height="12" uuid="fc9db07d-6f26-45d8-819c-b548a740c9a2"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UDS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="379" y="117" width="54" height="12" uuid="93ce04a6-cc27-41c2-ae4e-2e95f0f972bd"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PSV]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="8" width="550" height="41" uuid="a004d480-5e99-4dca-a7bd-424124e6fd68"/>
+				<textElement textAlignment="Center">
+					<font size="20" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Resumen de ventas por vendedor]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="386" y="66" width="153" height="20" uuid="b304406d-5622-47c2-af78-193af86b7af3"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameter2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="117" width="69" height="12" uuid="9e180167-fef6-4e10-83f4-0d494ecf31d7"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vendedor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="461" y="117" width="38" height="12" uuid="233664d4-4a95-475a-9b56-ae5a7e3aae10"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PSC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="517" y="117" width="38" height="12" uuid="f12c96e6-8fe5-46a6-a81f-9fff3672eb1f"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PSI]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<rectangle>
+				<reportElement x="5" y="0" width="550" height="12" uuid="1376412f-4bec-4e33-819b-7333def4fd74"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="5" y="0" width="133" height="12" uuid="24b322cb-aa90-4418-ba1c-0ce743cd900b"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vendedor}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="181" y="0" width="64" height="12" uuid="82d70a7f-01cf-4c04-ad65-2b1fa516e302"/>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{psm}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="274" y="0" width="60" height="12" uuid="8b56e1da-c6bf-45b1-818e-401017af0c82"/>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{uds}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="449" y="0" width="50" height="12" uuid="4d1cac22-0ef0-4248-9234-29bf9d69dbd3"/>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{psc}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="147" y="-1" width="1" height="12" uuid="07513f0d-b6be-44f6-9fe3-8f6323a18936"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="263" y="-1" width="1" height="12" uuid="dba16057-f7fa-402b-9635-6042f4e8ceed"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="439" y="0" width="1" height="12" uuid="80d3c0cf-09c1-44a0-82be-200866f90111"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField pattern="#,##0">
+				<reportElement x="369" y="0" width="64" height="12" uuid="852c6a62-5251-418e-a863-a9b1eeed67cf"/>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{psv}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="351" y="0" width="1" height="12" uuid="5df633e7-f1d7-48b9-906e-073b49421a7f"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField pattern="#,##0">
+				<reportElement x="501" y="0" width="54" height="12" uuid="d786b3d8-28e2-45fc-bcc6-38ed7fe499c5"/>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{psi}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="500" y="0" width="1" height="12" uuid="ecc36c01-7e34-422e-b682-47c13849c6be"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="24" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

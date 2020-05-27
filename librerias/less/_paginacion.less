@@ -1,0 +1,32 @@
+// Paginación
+.paginacion {
+    .pagination {
+        padding: 0;
+        
+        > li {
+
+            > a, > span {
+                color: @negro;
+                border-color: @fondocanela;
+
+                .glyphicon {
+                    font-size: .7em;
+                }
+
+            }
+        }
+
+        .active {
+            > a, > span {
+                background-color: @marron;
+                color: @blanco;
+                font-weight: 700;
+
+                &:hover {
+                    border-color: @marron;
+                }
+            }
+        }
+    }
+}
+

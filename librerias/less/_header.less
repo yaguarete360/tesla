@@ -1,0 +1,124 @@
+// HEADER
+
+header {
+    background-color: @blanco;
+
+    .logo {
+        display: block;
+        float:left;
+        width: 367px;
+        height: 77px;
+        text-indent: -9999px;
+        background-image: url('@{imgPath}/logo.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin:15px;
+    }
+
+    .navbar {
+        border: 0;
+        margin: 0;
+        background: transparent;
+
+        .navbar-nav {
+            margin-top: 30px;
+            float:right;
+
+            li {
+                a {
+                    color: @marron-oscuro;
+                    font-size: 1em;
+                    text-transform: uppercase;
+                    font-family: @roboto;
+                    font-weight: 500;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+
+                    &:hover {
+                        background: @marron;
+                        color: @blanco;
+                    }
+                }
+
+                &.dropdown {
+                    > .dropdown-menu {
+                        background: fade(@marron, 65%);
+                        border: 0;
+                        box-shadow: none;
+                        padding:0;
+
+                        > li {
+                            opacity: .65;
+                            .transition;
+
+                            a {
+                                color: @blanco;
+                                padding:10px;
+                                font-weight: 400;
+                            }
+
+                            &:hover {
+                                opacity: 1;
+
+                                a {
+                                    font-weight: 500;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            >.open {
+                > a,
+                > a:focus,
+                > a:hover {
+                    background: @marron;
+                    color: @blanco;
+                }
+            }
+        }
+
+        .navbar-search {
+            position: relative;
+            float: right;
+            border: 0;
+            margin: 20px 10px 8px 0;
+            padding: 9px 10px;
+            font-size: 20px;
+            background: @blanco;
+            color: @marron;
+            outline: 0;
+            
+
+            &:focus, &:hover {
+                background: @marron;
+                color: @blanco;
+            }
+        }
+    }
+
+    .panel-group {
+        margin: 0;
+        .panel, .panel.panel-default {
+            border: 0;
+            background-color: @fondocanela;
+        }
+
+        .panel-centered {
+            text-align: center;
+
+            input {
+                width:100%;
+                padding: 12px 24px;
+                font-size: 1em;
+
+                &.searchfield {
+                    padding: 10px 24px;
+                    border: 1px solid @marron;
+                    outline: 0;
+                }
+            }
+        }
+    }
+}

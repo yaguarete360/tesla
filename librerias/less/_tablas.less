@@ -1,0 +1,32 @@
+// Tablas 
+.table {
+    border: 1px solid @gris;
+
+    > thead {
+        > tr {
+            > th {
+                text-transform: uppercase;
+                background-color: @marron-oscuro;
+                color: @blanco;
+            }
+        }
+    }
+
+    > thead, > tbody {
+        > tr {
+            > td, > th {
+                padding: 12px;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    > tbody {
+        > tr {
+            &:hover {
+                background-color: @fondocanela;
+            }
+        }
+    }
+}
+
